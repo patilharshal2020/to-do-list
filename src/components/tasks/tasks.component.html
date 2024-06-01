@@ -1,1 +1,32 @@
-<p>tasks works!</p>
+<div class="d-flex gap-3 align-items-start">
+    <div class="card">
+        <div class="card-header bg-info">
+          Completed ({{completedTasks.length}})
+        </div>
+        <div class="card-body bg-body-secondary">
+            <div cdkDropList [cdkDropListData]="completedTasks" class="completed-list" (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let task of completedTasks" cdkDrag class="card mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                      <h6 class="card-subtitle mb-2 text-warning">{{task?.title}}</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header bg-info">
+          In Progress ({{inProgressTasks.length}})
+        </div>
+        <div class="card-body bg-body-secondary">
+            <div cdkDropList [cdkDropListData]="inProgressTasks" class="inprogress-list" (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let task of inProgressTasks" cdkDrag class="card mb-3" style="width: 18rem;">
+                    <div class="card-body">
+                      <h6 class="card-subtitle mb-2 text-warning">{{task?.title}}</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

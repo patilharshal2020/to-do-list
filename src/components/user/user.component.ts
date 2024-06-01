@@ -17,8 +17,19 @@ export class UserComponent implements OnInit {
 
   ngOnInit(){
     this.userService.getUsers().subscribe((data)=>{
-      this.users = data;
+      const allUsers: any = data;
+      this.userService.getToDos().subscribe((toDoData)=>{
+        const userToDo: any = toDoData;
+        allUsers.forEach(el => {
+          el.tasks = userToDo.filter( t => t.userId === el.id);
+        });
+        this.users = allUsers;
+      })
     });
+  }
+
+  public selectUser(user){
+    this.userService.onSelectUser(user);
   }
 
 }
