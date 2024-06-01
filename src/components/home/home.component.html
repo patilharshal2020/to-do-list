@@ -1,0 +1,8 @@
+<app-top-bar></app-top-bar>
+<div class="d-flex">
+    <app-user class="w-25 bg-body-secondary" [ngClass]="{'d-none': !showUser}"></app-user>
+    <div class="d-flex h-90vh">
+        <button (click)="toggleShowUser()" class="btn btn-sm border-0">{{showUser ? '<' : '>'}}</button>
+    </div>
+    <app-tasks></app-tasks>
+</div>
