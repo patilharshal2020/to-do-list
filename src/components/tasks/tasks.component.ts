@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { ToDo, User, UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tasks',
@@ -12,25 +13,15 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./tasks.component.css'] // Note: styleUrls instead of styleUrl
 })
 export class TasksComponent implements OnInit {
-  selectedUser: any;
-  completedTasks: any = [];
-  inProgressTasks: any = [];
+  selectedUser$: Observable<User>;
+  userTasks$: Observable<any>;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {
+    this.selectedUser$ = this.userService.selectedUser$;
+    this.userTasks$ = this.userService.userTasks$;
+  }
 
   ngOnInit() {
-    this.userService.selectedUser.subscribe(async user => {
-      this.selectedUser = user;
-      this.completedTasks = [];
-      this.inProgressTasks = [];
-      this.selectedUser.tasks.forEach(task => {
-        if (task.completed) {
-          this.completedTasks.push(task);
-        } else {
-          this.inProgressTasks.push(task);
-        }
-      });
-    });
   }
 
   drop(event: CdkDragDrop<any[]>) {

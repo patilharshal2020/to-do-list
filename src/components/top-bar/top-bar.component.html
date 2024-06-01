@@ -1,8 +1,8 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
+<nav class="navbar navbar-light bg-light sticky-top">
+    <div class="container-fluid" *ngIf="selectedUser$ | async as user">
       <a class="navbar-brand" href="#">
         <img src="../../assets/H-logo.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-        {{title}}
+        {{user.name}}
       </a>
     </div>
 </nav>

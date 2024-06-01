@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { ToDo, User, UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user',
@@ -11,25 +12,20 @@ import { CommonModule } from '@angular/common';
 })
 export class UserComponent implements OnInit {
 
-  users: any = [];
-  constructor(private userService: UserService){}
+  users$: Observable<User[]>;
+  selecteduser$: Observable<User>;
+  userTasks$: Observable<ToDo>;
+  constructor(private userService: UserService){
+    this.users$ = this.userService.users$;
+    this.selecteduser$ = this.userService.selectedUser$;
+  }
 
 
   ngOnInit(){
-    this.userService.getUsers().subscribe((data)=>{
-      const allUsers: any = data;
-      this.userService.getToDos().subscribe((toDoData)=>{
-        const userToDo: any = toDoData;
-        allUsers.forEach(el => {
-          el.tasks = userToDo.filter( t => t.userId === el.id);
-        });
-        this.users = allUsers;
-      })
-    });
   }
 
-  public selectUser(user){
-    this.userService.onSelectUser(user);
+  onSelectUser(user: User){
+    this.userService.selectUser(user);
   }
 
 }

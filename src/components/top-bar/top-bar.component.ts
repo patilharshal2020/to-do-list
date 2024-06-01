@@ -1,23 +1,25 @@
 import { Component } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { User, UserService } from '../../services/user.service';
+import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css'
 })
 export class TopBarComponent {
 
+  selectedUser$: Observable<User>;
   title: string = 'harryTech';
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService){
+    this.selectedUser$ = this.userService.selectedUser$;
+  }
 
   ngOnInit(){
-    this.userService.selectedUser.subscribe(user => {
-      const sUser: any = user;
-      this.title = sUser?.name})
   }
 
 }
