@@ -24,6 +24,10 @@ export class TasksComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngDoCheck(){
+    console.log('change detection run tasks');
+  }
+
   drop(event: CdkDragDrop<any[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

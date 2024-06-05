@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck, OnInit } from '@angular/core';
 import { ToDo, User, UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
@@ -8,9 +8,10 @@ import { Observable } from 'rxjs';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  styleUrl: './user.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, DoCheck {
 
   users$: Observable<User[]>;
   selecteduser$: Observable<User>;
@@ -22,6 +23,10 @@ export class UserComponent implements OnInit {
 
 
   ngOnInit(){
+  }
+
+  ngDoCheck(){
+    console.log('change detection run users');
   }
 
   onSelectUser(user: User){
