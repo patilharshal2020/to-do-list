@@ -5,3 +5,11 @@
 .user-list-items{
     cursor: pointer;
 }
+
+.user-filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}

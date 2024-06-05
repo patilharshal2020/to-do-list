@@ -8,6 +8,7 @@ export interface User {
   "name": string,
   "username": string,
   "email": string,
+  "gender": string,
   "address": {
     "street": string,
     "suite": string,

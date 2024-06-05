@@ -4,6 +4,7 @@ export const users = [
       "name": "Leanne Graham",
       "username": "Bret",
       "email": "Sincere@april.biz",
+      "gender": "Male",
       "address": {
         "street": "Kulas Light",
         "suite": "Apt. 556",
@@ -27,6 +28,7 @@ export const users = [
       "name": "Ervin Howell",
       "username": "Antonette",
       "email": "Shanna@melissa.tv",
+      "gender": "Male",
       "address": {
         "street": "Victor Plains",
         "suite": "Suite 879",
@@ -50,6 +52,7 @@ export const users = [
       "name": "Clementine Bauch",
       "username": "Samantha",
       "email": "Nathan@yesenia.net",
+      "gender": "Male",
       "address": {
         "street": "Douglas Extension",
         "suite": "Suite 847",
@@ -73,6 +76,7 @@ export const users = [
       "name": "Patricia Lebsack",
       "username": "Karianne",
       "email": "Julianne.OConner@kory.org",
+      "gender": "Female",
       "address": {
         "street": "Hoeger Mall",
         "suite": "Apt. 692",
@@ -96,6 +100,7 @@ export const users = [
       "name": "Chelsey Dietrich",
       "username": "Kamren",
       "email": "Lucio_Hettinger@annie.ca",
+      "gender": "Female",
       "address": {
         "street": "Skiles Walks",
         "suite": "Suite 351",
@@ -119,6 +124,7 @@ export const users = [
       "name": "Mrs. Dennis Schulist",
       "username": "Leopoldo_Corkery",
       "email": "Karley_Dach@jasper.info",
+      "gender": "Male",
       "address": {
         "street": "Norberto Crossing",
         "suite": "Apt. 950",
@@ -142,6 +148,7 @@ export const users = [
       "name": "Kurtis Weissnat",
       "username": "Elwyn.Skiles",
       "email": "Telly.Hoeger@billy.biz",
+      "gender": "Female",
       "address": {
         "street": "Rex Trail",
         "suite": "Suite 280",
@@ -165,6 +172,7 @@ export const users = [
       "name": "Nicholas Runolfsdottir V",
       "username": "Maxime_Nienow",
       "email": "Sherwood@rosamond.me",
+      "gender": "Female",
       "address": {
         "street": "Ellsworth Summit",
         "suite": "Suite 729",
@@ -188,6 +196,7 @@ export const users = [
       "name": "Glenna Reichert",
       "username": "Delphine",
       "email": "Chaim_McDermott@dana.io",
+      "gender": "Male",
       "address": {
         "street": "Dayna Park",
         "suite": "Suite 449",
@@ -211,6 +220,7 @@ export const users = [
       "name": "Clementina DuBuque",
       "username": "Moriah.Stanton",
       "email": "Rey.Padberg@karina.biz",
+      "gender": "Female",
       "address": {
         "street": "Kattie Turnpike",
         "suite": "Suite 198",
