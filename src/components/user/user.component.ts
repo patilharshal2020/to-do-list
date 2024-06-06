@@ -32,7 +32,7 @@ export class UserComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(){
-    console.log('change detection run users');
+    // console.log('change detection run users');
   }
 
   onSelectUser(user: User){

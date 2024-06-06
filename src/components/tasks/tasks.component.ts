@@ -25,7 +25,7 @@ export class TasksComponent implements OnInit {
   }
 
   ngDoCheck(){
-    console.log('change detection run tasks');
+    // console.log('change detection run tasks');
   }
 
   drop(event: CdkDragDrop<any[]>) {
